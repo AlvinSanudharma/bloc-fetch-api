@@ -8,7 +8,7 @@ part 'live_game_state.dart';
 part 'live_game_bloc.freezed.dart';
 
 class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
-  LiveGameBloc() : super(_Initial()) {
+  LiveGameBloc() : super(const _Initial()) {
     on<LiveGameEvent>((event, emit) async {
       await event.when(
         started: () {

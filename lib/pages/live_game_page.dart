@@ -48,14 +48,36 @@ class _LiveGamePageState extends State<LiveGamePage> {
               return GridView.builder(
                 itemCount: list.length,
                 physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.all(2),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                    crossAxisCount: 2, mainAxisSpacing: 2, crossAxisSpacing: 2),
                 itemBuilder: (context, index) {
                   Game game = list[index];
 
-                  return ExtendedImage.network(
-                    game.thumbnail!,
-                    fit: BoxFit.cover,
+                  return Stack(
+                    children: [
+                      Positioned.fill(
+                        child: ExtendedImage.network(
+                          game.thumbnail!,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Positioned.fill(
+                        child: Container(
+                          padding: const EdgeInsets.all(4),
+                          decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment(0, -0.2),
+                                  colors: [Colors.black, Colors.transparent])),
+                          alignment: Alignment.bottomLeft,
+                          child: Text(
+                            game.title ?? '',
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
                   );
                 },
               );
