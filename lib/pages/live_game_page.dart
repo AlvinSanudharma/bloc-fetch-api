@@ -1,6 +1,7 @@
 import 'package:bloc_fetch_api/bloc/live_game_bloc.dart';
 import 'package:bloc_fetch_api/cubit/genre_cubit.dart';
 import 'package:bloc_fetch_api/models/game.dart';
+import 'package:bloc_fetch_api/widgets/item_game.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -132,34 +133,19 @@ class _LiveGamePageState extends State<LiveGamePage> {
                           itemBuilder: (context, index) {
                             Game game = list[index];
 
-                            return Stack(
-                              children: [
-                                Positioned.fill(
-                                  child: ExtendedImage.network(
-                                    game.thumbnail!,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  child: Container(
-                                    padding: const EdgeInsets.all(4),
-                                    decoration: const BoxDecoration(
-                                        gradient: LinearGradient(
-                                            begin: Alignment.bottomCenter,
-                                            end: Alignment(0, -0.2),
-                                            colors: [
-                                          Colors.black,
-                                          Colors.transparent
-                                        ])),
-                                    alignment: Alignment.bottomLeft,
-                                    child: Text(
-                                      game.title ?? '',
-                                      style:
-                                          const TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            return itemGame(
+                              game: game,
+                              onSavedClick: () {
+                                if (game.isSaved) {
+                                  context
+                                      .read<LiveGameBloc>()
+                                      .add(LiveGameEvent.onRemoveGame(game));
+                                } else {
+                                  context
+                                      .read<LiveGameBloc>()
+                                      .add(LiveGameEvent.onSaveGame(game));
+                                }
+                              },
                             );
                           },
                         );

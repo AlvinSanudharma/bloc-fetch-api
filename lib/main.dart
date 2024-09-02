@@ -22,7 +22,13 @@ class MainApp extends StatelessWidget {
           create: (context) => GenreCubit(),
         )
       ],
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeData(
+          textTheme: Theme.of(context).textTheme.apply(
+                fontSizeFactor: 1.0,
+                fontSizeDelta: 2.0,
+              ),
+        ),
         home: LiveGamePage(),
       ),
     );

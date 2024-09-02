@@ -20,6 +20,7 @@ _$GameImpl _$$GameImplFromJson(Map<String, dynamic> json) => _$GameImpl(
           ? null
           : DateTime.parse(json['release_date'] as String),
       freetogameProfileUrl: json['freetogame_profile_url'] as String?,
+      isSaved: json['isSaved'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
@@ -35,4 +36,5 @@ Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
       'developer': instance.developer,
       'release_date': instance.releaseDate?.toIso8601String(),
       'freetogame_profile_url': instance.freetogameProfileUrl,
+      'isSaved': instance.isSaved,
     };

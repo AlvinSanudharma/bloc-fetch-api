@@ -42,6 +42,8 @@ mixin _$Game {
   DateTime? get releaseDate => throw _privateConstructorUsedError;
   @JsonKey(name: "freetogame_profile_url")
   String? get freetogameProfileUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: "isSaved")
+  bool get isSaved => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -64,7 +66,8 @@ abstract class $GameCopyWith<$Res> {
       @JsonKey(name: "publisher") String? publisher,
       @JsonKey(name: "developer") String? developer,
       @JsonKey(name: "release_date") DateTime? releaseDate,
-      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl});
+      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl,
+      @JsonKey(name: "isSaved") bool isSaved});
 }
 
 /// @nodoc
@@ -91,6 +94,7 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
     Object? developer = freezed,
     Object? releaseDate = freezed,
     Object? freetogameProfileUrl = freezed,
+    Object? isSaved = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -137,6 +141,10 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSaved: null == isSaved
+          ? _value.isSaved
+          : isSaved // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -159,7 +167,8 @@ abstract class _$$GameImplCopyWith<$Res> implements $GameCopyWith<$Res> {
       @JsonKey(name: "publisher") String? publisher,
       @JsonKey(name: "developer") String? developer,
       @JsonKey(name: "release_date") DateTime? releaseDate,
-      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl});
+      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl,
+      @JsonKey(name: "isSaved") bool isSaved});
 }
 
 /// @nodoc
@@ -183,6 +192,7 @@ class __$$GameImplCopyWithImpl<$Res>
     Object? developer = freezed,
     Object? releaseDate = freezed,
     Object? freetogameProfileUrl = freezed,
+    Object? isSaved = null,
   }) {
     return _then(_$GameImpl(
       id: freezed == id
@@ -229,6 +239,10 @@ class __$$GameImplCopyWithImpl<$Res>
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      isSaved: null == isSaved
+          ? _value.isSaved
+          : isSaved // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -247,7 +261,8 @@ class _$GameImpl implements _Game {
       @JsonKey(name: "publisher") this.publisher,
       @JsonKey(name: "developer") this.developer,
       @JsonKey(name: "release_date") this.releaseDate,
-      @JsonKey(name: "freetogame_profile_url") this.freetogameProfileUrl});
+      @JsonKey(name: "freetogame_profile_url") this.freetogameProfileUrl,
+      @JsonKey(name: "isSaved") this.isSaved = false});
 
   factory _$GameImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameImplFromJson(json);
@@ -285,10 +300,13 @@ class _$GameImpl implements _Game {
   @override
   @JsonKey(name: "freetogame_profile_url")
   final String? freetogameProfileUrl;
+  @override
+  @JsonKey(name: "isSaved")
+  final bool isSaved;
 
   @override
   String toString() {
-    return 'Game(id: $id, title: $title, thumbnail: $thumbnail, shortDescription: $shortDescription, gameUrl: $gameUrl, genre: $genre, platform: $platform, publisher: $publisher, developer: $developer, releaseDate: $releaseDate, freetogameProfileUrl: $freetogameProfileUrl)';
+    return 'Game(id: $id, title: $title, thumbnail: $thumbnail, shortDescription: $shortDescription, gameUrl: $gameUrl, genre: $genre, platform: $platform, publisher: $publisher, developer: $developer, releaseDate: $releaseDate, freetogameProfileUrl: $freetogameProfileUrl, isSaved: $isSaved)';
   }
 
   @override
@@ -313,7 +331,8 @@ class _$GameImpl implements _Game {
             (identical(other.releaseDate, releaseDate) ||
                 other.releaseDate == releaseDate) &&
             (identical(other.freetogameProfileUrl, freetogameProfileUrl) ||
-                other.freetogameProfileUrl == freetogameProfileUrl));
+                other.freetogameProfileUrl == freetogameProfileUrl) &&
+            (identical(other.isSaved, isSaved) || other.isSaved == isSaved));
   }
 
   @JsonKey(ignore: true)
@@ -330,7 +349,8 @@ class _$GameImpl implements _Game {
       publisher,
       developer,
       releaseDate,
-      freetogameProfileUrl);
+      freetogameProfileUrl,
+      isSaved);
 
   @JsonKey(ignore: true)
   @override
@@ -359,7 +379,8 @@ abstract class _Game implements Game {
       @JsonKey(name: "developer") final String? developer,
       @JsonKey(name: "release_date") final DateTime? releaseDate,
       @JsonKey(name: "freetogame_profile_url")
-      final String? freetogameProfileUrl}) = _$GameImpl;
+      final String? freetogameProfileUrl,
+      @JsonKey(name: "isSaved") final bool isSaved}) = _$GameImpl;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$GameImpl.fromJson;
 
@@ -396,6 +417,9 @@ abstract class _Game implements Game {
   @override
   @JsonKey(name: "freetogame_profile_url")
   String? get freetogameProfileUrl;
+  @override
+  @JsonKey(name: "isSaved")
+  bool get isSaved;
   @override
   @JsonKey(ignore: true)
   _$$GameImplCopyWith<_$GameImpl> get copyWith =>

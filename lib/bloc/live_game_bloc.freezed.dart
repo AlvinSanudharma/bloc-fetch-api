@@ -20,18 +20,24 @@ mixin _$LiveGameEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
+    required TResult Function(Game game) onSaveGame,
+    required TResult Function(Game game) onRemoveGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
+    TResult? Function(Game game)? onSaveGame,
+    TResult? Function(Game game)? onRemoveGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
+    TResult Function(Game game)? onSaveGame,
+    TResult Function(Game game)? onRemoveGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$LiveGameEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_OnFetchLiveGame value) onFetchLiveGame,
+    required TResult Function(_OnSaveGame value) onSaveGame,
+    required TResult Function(_OnRemoveGame value) onRemoveGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult? Function(_OnSaveGame value)? onSaveGame,
+    TResult? Function(_OnRemoveGame value)? onRemoveGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult Function(_OnSaveGame value)? onSaveGame,
+    TResult Function(_OnRemoveGame value)? onRemoveGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +126,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
+    required TResult Function(Game game) onSaveGame,
+    required TResult Function(Game game) onRemoveGame,
   }) {
     return started();
   }
@@ -123,6 +137,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
+    TResult? Function(Game game)? onSaveGame,
+    TResult? Function(Game game)? onRemoveGame,
   }) {
     return started?.call();
   }
@@ -132,6 +148,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
+    TResult Function(Game game)? onSaveGame,
+    TResult Function(Game game)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -145,6 +163,8 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_OnFetchLiveGame value) onFetchLiveGame,
+    required TResult Function(_OnSaveGame value) onSaveGame,
+    required TResult Function(_OnRemoveGame value) onRemoveGame,
   }) {
     return started(this);
   }
@@ -154,6 +174,8 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult? Function(_OnSaveGame value)? onSaveGame,
+    TResult? Function(_OnRemoveGame value)? onRemoveGame,
   }) {
     return started?.call(this);
   }
@@ -163,6 +185,8 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult Function(_OnSaveGame value)? onSaveGame,
+    TResult Function(_OnRemoveGame value)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -216,6 +240,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
+    required TResult Function(Game game) onSaveGame,
+    required TResult Function(Game game) onRemoveGame,
   }) {
     return onFetchLiveGame();
   }
@@ -225,6 +251,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
+    TResult? Function(Game game)? onSaveGame,
+    TResult? Function(Game game)? onRemoveGame,
   }) {
     return onFetchLiveGame?.call();
   }
@@ -234,6 +262,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
+    TResult Function(Game game)? onSaveGame,
+    TResult Function(Game game)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (onFetchLiveGame != null) {
@@ -247,6 +277,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_OnFetchLiveGame value) onFetchLiveGame,
+    required TResult Function(_OnSaveGame value) onSaveGame,
+    required TResult Function(_OnRemoveGame value) onRemoveGame,
   }) {
     return onFetchLiveGame(this);
   }
@@ -256,6 +288,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult? Function(_OnSaveGame value)? onSaveGame,
+    TResult? Function(_OnRemoveGame value)? onRemoveGame,
   }) {
     return onFetchLiveGame?.call(this);
   }
@@ -265,6 +299,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult Function(_OnSaveGame value)? onSaveGame,
+    TResult Function(_OnRemoveGame value)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (onFetchLiveGame != null) {
@@ -276,6 +312,316 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
 
 abstract class _OnFetchLiveGame implements LiveGameEvent {
   const factory _OnFetchLiveGame() = _$OnFetchLiveGameImpl;
+}
+
+/// @nodoc
+abstract class _$$OnSaveGameImplCopyWith<$Res> {
+  factory _$$OnSaveGameImplCopyWith(
+          _$OnSaveGameImpl value, $Res Function(_$OnSaveGameImpl) then) =
+      __$$OnSaveGameImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Game game});
+
+  $GameCopyWith<$Res> get game;
+}
+
+/// @nodoc
+class __$$OnSaveGameImplCopyWithImpl<$Res>
+    extends _$LiveGameEventCopyWithImpl<$Res, _$OnSaveGameImpl>
+    implements _$$OnSaveGameImplCopyWith<$Res> {
+  __$$OnSaveGameImplCopyWithImpl(
+      _$OnSaveGameImpl _value, $Res Function(_$OnSaveGameImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? game = null,
+  }) {
+    return _then(_$OnSaveGameImpl(
+      null == game
+          ? _value.game
+          : game // ignore: cast_nullable_to_non_nullable
+              as Game,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GameCopyWith<$Res> get game {
+    return $GameCopyWith<$Res>(_value.game, (value) {
+      return _then(_value.copyWith(game: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnSaveGameImpl implements _OnSaveGame {
+  const _$OnSaveGameImpl(this.game);
+
+  @override
+  final Game game;
+
+  @override
+  String toString() {
+    return 'LiveGameEvent.onSaveGame(game: $game)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnSaveGameImpl &&
+            (identical(other.game, game) || other.game == game));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, game);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnSaveGameImplCopyWith<_$OnSaveGameImpl> get copyWith =>
+      __$$OnSaveGameImplCopyWithImpl<_$OnSaveGameImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onFetchLiveGame,
+    required TResult Function(Game game) onSaveGame,
+    required TResult Function(Game game) onRemoveGame,
+  }) {
+    return onSaveGame(game);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onFetchLiveGame,
+    TResult? Function(Game game)? onSaveGame,
+    TResult? Function(Game game)? onRemoveGame,
+  }) {
+    return onSaveGame?.call(game);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onFetchLiveGame,
+    TResult Function(Game game)? onSaveGame,
+    TResult Function(Game game)? onRemoveGame,
+    required TResult orElse(),
+  }) {
+    if (onSaveGame != null) {
+      return onSaveGame(game);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_OnFetchLiveGame value) onFetchLiveGame,
+    required TResult Function(_OnSaveGame value) onSaveGame,
+    required TResult Function(_OnRemoveGame value) onRemoveGame,
+  }) {
+    return onSaveGame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult? Function(_OnSaveGame value)? onSaveGame,
+    TResult? Function(_OnRemoveGame value)? onRemoveGame,
+  }) {
+    return onSaveGame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult Function(_OnSaveGame value)? onSaveGame,
+    TResult Function(_OnRemoveGame value)? onRemoveGame,
+    required TResult orElse(),
+  }) {
+    if (onSaveGame != null) {
+      return onSaveGame(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnSaveGame implements LiveGameEvent {
+  const factory _OnSaveGame(final Game game) = _$OnSaveGameImpl;
+
+  Game get game;
+  @JsonKey(ignore: true)
+  _$$OnSaveGameImplCopyWith<_$OnSaveGameImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnRemoveGameImplCopyWith<$Res> {
+  factory _$$OnRemoveGameImplCopyWith(
+          _$OnRemoveGameImpl value, $Res Function(_$OnRemoveGameImpl) then) =
+      __$$OnRemoveGameImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Game game});
+
+  $GameCopyWith<$Res> get game;
+}
+
+/// @nodoc
+class __$$OnRemoveGameImplCopyWithImpl<$Res>
+    extends _$LiveGameEventCopyWithImpl<$Res, _$OnRemoveGameImpl>
+    implements _$$OnRemoveGameImplCopyWith<$Res> {
+  __$$OnRemoveGameImplCopyWithImpl(
+      _$OnRemoveGameImpl _value, $Res Function(_$OnRemoveGameImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? game = null,
+  }) {
+    return _then(_$OnRemoveGameImpl(
+      null == game
+          ? _value.game
+          : game // ignore: cast_nullable_to_non_nullable
+              as Game,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GameCopyWith<$Res> get game {
+    return $GameCopyWith<$Res>(_value.game, (value) {
+      return _then(_value.copyWith(game: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OnRemoveGameImpl implements _OnRemoveGame {
+  const _$OnRemoveGameImpl(this.game);
+
+  @override
+  final Game game;
+
+  @override
+  String toString() {
+    return 'LiveGameEvent.onRemoveGame(game: $game)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnRemoveGameImpl &&
+            (identical(other.game, game) || other.game == game));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, game);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnRemoveGameImplCopyWith<_$OnRemoveGameImpl> get copyWith =>
+      __$$OnRemoveGameImplCopyWithImpl<_$OnRemoveGameImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onFetchLiveGame,
+    required TResult Function(Game game) onSaveGame,
+    required TResult Function(Game game) onRemoveGame,
+  }) {
+    return onRemoveGame(game);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onFetchLiveGame,
+    TResult? Function(Game game)? onSaveGame,
+    TResult? Function(Game game)? onRemoveGame,
+  }) {
+    return onRemoveGame?.call(game);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onFetchLiveGame,
+    TResult Function(Game game)? onSaveGame,
+    TResult Function(Game game)? onRemoveGame,
+    required TResult orElse(),
+  }) {
+    if (onRemoveGame != null) {
+      return onRemoveGame(game);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_OnFetchLiveGame value) onFetchLiveGame,
+    required TResult Function(_OnSaveGame value) onSaveGame,
+    required TResult Function(_OnRemoveGame value) onRemoveGame,
+  }) {
+    return onRemoveGame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult? Function(_OnSaveGame value)? onSaveGame,
+    TResult? Function(_OnRemoveGame value)? onRemoveGame,
+  }) {
+    return onRemoveGame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_OnFetchLiveGame value)? onFetchLiveGame,
+    TResult Function(_OnSaveGame value)? onSaveGame,
+    TResult Function(_OnRemoveGame value)? onRemoveGame,
+    required TResult orElse(),
+  }) {
+    if (onRemoveGame != null) {
+      return onRemoveGame(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnRemoveGame implements LiveGameEvent {
+  const factory _OnRemoveGame(final Game game) = _$OnRemoveGameImpl;
+
+  Game get game;
+  @JsonKey(ignore: true)
+  _$$OnRemoveGameImplCopyWith<_$OnRemoveGameImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

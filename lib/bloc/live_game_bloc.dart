@@ -14,6 +14,42 @@ class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
         started: () {
           emit(const LiveGameState.initial());
         },
+        onSaveGame: (game) {
+          final List<Game> games = List.from(state.when(
+            initial: () => [],
+            loading: () => [],
+            failure: (message) => [],
+            loaded: (games) => games,
+          ));
+
+          Game newGame = game.copyWith(isSaved: true);
+
+          int index = games.indexWhere(
+            (e) => e.id == newGame.id,
+          );
+
+          games[index] = newGame;
+
+          emit(LiveGameState.loaded(games));
+        },
+        onRemoveGame: (game) {
+          final List<Game> games = List.from(state.when(
+            initial: () => [],
+            loading: () => [],
+            failure: (message) => [],
+            loaded: (games) => games,
+          ));
+
+          Game newGame = game.copyWith(isSaved: false);
+
+          int index = games.indexWhere(
+            (e) => e.id == newGame.id,
+          );
+
+          games[index] = newGame;
+
+          emit(LiveGameState.loaded(games));
+        },
         onFetchLiveGame: () async {
           emit(const LiveGameState.loading());
 
