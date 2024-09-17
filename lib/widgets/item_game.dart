@@ -38,7 +38,7 @@ class itemGame extends StatelessWidget {
           right: 4,
           child: IconButton.filledTonal(
             onPressed: onSavedClick,
-            icon: game.isSaved
+            icon: game.isSaved ?? false
                 ? const Icon(
                     Icons.bookmark,
                     color: Colors.blue,

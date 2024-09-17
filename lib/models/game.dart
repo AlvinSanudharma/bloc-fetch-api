@@ -14,6 +14,7 @@ String gameToJson(Game data) => json.encode(data.toJson());
 
 @freezed
 class Game with _$Game {
+  @JsonSerializable(explicitToJson: true)
   const factory Game(
       {@JsonKey(name: "id") int? id,
       @JsonKey(name: "title") String? title,
@@ -26,7 +27,7 @@ class Game with _$Game {
       @JsonKey(name: "developer") String? developer,
       @JsonKey(name: "release_date") DateTime? releaseDate,
       @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl,
-      @JsonKey(name: "isSaved", defaultValue: false) bool isSaved}) = _Game;
+      @JsonKey(name: "isSaved", defaultValue: false) bool? isSaved}) = _Game;
 
   factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 }

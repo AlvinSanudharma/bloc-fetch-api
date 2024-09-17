@@ -136,7 +136,7 @@ class _LiveGamePageState extends State<LiveGamePage> {
                             return itemGame(
                               game: game,
                               onSavedClick: () {
-                                if (game.isSaved) {
+                                if (game.isSaved ?? false) {
                                   context
                                       .read<LiveGameBloc>()
                                       .add(LiveGameEvent.onRemoveGame(game));
