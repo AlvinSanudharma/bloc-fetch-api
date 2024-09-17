@@ -26,7 +26,7 @@ class Game with _$Game {
       @JsonKey(name: "developer") String? developer,
       @JsonKey(name: "release_date") DateTime? releaseDate,
       @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl,
-      @JsonKey(name: "isSaved") @Default(false) bool isSaved}) = _Game;
+      @JsonKey(name: "isSaved", defaultValue: false) bool isSaved}) = _Game;
 
   factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 }
