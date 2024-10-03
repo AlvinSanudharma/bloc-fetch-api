@@ -1,11 +1,11 @@
-import 'package:bloc_fetch_api/models/game.dart';
+import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
 class itemGame extends StatelessWidget {
   const itemGame({super.key, required this.game, required this.onSavedClick});
 
-  final Game game;
+  final GameEntity game;
   final VoidCallback onSavedClick;
 
   @override
@@ -14,7 +14,7 @@ class itemGame extends StatelessWidget {
       children: [
         Positioned.fill(
           child: ExtendedImage.network(
-            game.thumbnail!,
+            game.thumbnail,
             fit: BoxFit.cover,
           ),
         ),
@@ -28,7 +28,7 @@ class itemGame extends StatelessWidget {
                     colors: [Colors.black, Colors.transparent])),
             alignment: Alignment.bottomLeft,
             child: Text(
-              game.title ?? '',
+              game.title,
               style: const TextStyle(color: Colors.white),
             ),
           ),
@@ -38,7 +38,7 @@ class itemGame extends StatelessWidget {
           right: 4,
           child: IconButton.filledTonal(
             onPressed: onSavedClick,
-            icon: game.isSaved ?? false
+            icon: game.isSaved
                 ? const Icon(
                     Icons.bookmark,
                     color: Colors.blue,

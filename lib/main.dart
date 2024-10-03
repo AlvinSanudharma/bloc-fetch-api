@@ -1,10 +1,15 @@
-import 'package:bloc_fetch_api/bloc/live_game_bloc.dart';
-import 'package:bloc_fetch_api/cubit/genre_cubit.dart';
-import 'package:bloc_fetch_api/pages/live_game_page.dart';
+import 'package:bloc_fetch_api/games/presentation/bloc/live_game_bloc.dart';
+import 'package:bloc_fetch_api/games/presentation/cubit/genre_cubit.dart';
+import 'package:bloc_fetch_api/di/app_di.dart';
+import 'package:bloc_fetch_api/games/presentation/pages/live_game_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await getItInit();
+
   runApp(const MainApp());
 }
 
@@ -16,10 +21,10 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => LiveGameBloc(),
+          create: (context) => getIt<LiveGameBloc>(),
         ),
         BlocProvider(
-          create: (context) => GenreCubit(),
+          create: (context) => getIt<GenreCubit>(),
         )
       ],
       child: MaterialApp(

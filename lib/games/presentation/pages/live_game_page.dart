@@ -1,8 +1,7 @@
-import 'package:bloc_fetch_api/bloc/live_game_bloc.dart';
-import 'package:bloc_fetch_api/cubit/genre_cubit.dart';
-import 'package:bloc_fetch_api/models/game.dart';
-import 'package:bloc_fetch_api/widgets/item_game.dart';
-import 'package:extended_image/extended_image.dart';
+import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
+import 'package:bloc_fetch_api/games/presentation/bloc/live_game_bloc.dart';
+import 'package:bloc_fetch_api/games/presentation/cubit/genre_cubit.dart';
+import 'package:bloc_fetch_api/games/presentation/widgets/item_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -98,10 +97,13 @@ class _LiveGamePageState extends State<LiveGamePage> {
                     child: CircularProgressIndicator(),
                   ),
                   failure: (message) => Center(
-                    child: Text(message),
+                    child: Text(
+                      message,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   loaded: (games) {
-                    List<Game> listGames = games;
+                    List<GameEntity> listGames = games;
 
                     if (listGames.isEmpty) {
                       return const Center(
@@ -111,7 +113,7 @@ class _LiveGamePageState extends State<LiveGamePage> {
 
                     return BlocBuilder<GenreCubit, GenreState>(
                       builder: (context, genreState) {
-                        List<Game> list = listGames
+                        List<GameEntity> list = listGames
                             .where(
                               (el) =>
                                   el.genre ==
@@ -131,12 +133,12 @@ class _LiveGamePageState extends State<LiveGamePage> {
                                   mainAxisSpacing: 2,
                                   crossAxisSpacing: 2),
                           itemBuilder: (context, index) {
-                            Game game = list[index];
+                            GameEntity game = list[index];
 
                             return itemGame(
                               game: game,
                               onSavedClick: () {
-                                if (game.isSaved ?? false) {
+                                if (game.isSaved) {
                                   context
                                       .read<LiveGameBloc>()
                                       .add(LiveGameEvent.onRemoveGame(game));

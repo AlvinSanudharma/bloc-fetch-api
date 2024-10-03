@@ -20,24 +20,24 @@ mixin _$LiveGameEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
-    required TResult Function(Game game) onSaveGame,
-    required TResult Function(Game game) onRemoveGame,
+    required TResult Function(GameEntity game) onSaveGame,
+    required TResult Function(GameEntity game) onRemoveGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
-    TResult? Function(Game game)? onSaveGame,
-    TResult? Function(Game game)? onRemoveGame,
+    TResult? Function(GameEntity game)? onSaveGame,
+    TResult? Function(GameEntity game)? onRemoveGame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
-    TResult Function(Game game)? onSaveGame,
-    TResult Function(Game game)? onRemoveGame,
+    TResult Function(GameEntity game)? onSaveGame,
+    TResult Function(GameEntity game)? onRemoveGame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,8 +126,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
-    required TResult Function(Game game) onSaveGame,
-    required TResult Function(Game game) onRemoveGame,
+    required TResult Function(GameEntity game) onSaveGame,
+    required TResult Function(GameEntity game) onRemoveGame,
   }) {
     return started();
   }
@@ -137,8 +137,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
-    TResult? Function(Game game)? onSaveGame,
-    TResult? Function(Game game)? onRemoveGame,
+    TResult? Function(GameEntity game)? onSaveGame,
+    TResult? Function(GameEntity game)? onRemoveGame,
   }) {
     return started?.call();
   }
@@ -148,8 +148,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
-    TResult Function(Game game)? onSaveGame,
-    TResult Function(Game game)? onRemoveGame,
+    TResult Function(GameEntity game)? onSaveGame,
+    TResult Function(GameEntity game)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -240,8 +240,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
-    required TResult Function(Game game) onSaveGame,
-    required TResult Function(Game game) onRemoveGame,
+    required TResult Function(GameEntity game) onSaveGame,
+    required TResult Function(GameEntity game) onRemoveGame,
   }) {
     return onFetchLiveGame();
   }
@@ -251,8 +251,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
-    TResult? Function(Game game)? onSaveGame,
-    TResult? Function(Game game)? onRemoveGame,
+    TResult? Function(GameEntity game)? onSaveGame,
+    TResult? Function(GameEntity game)? onRemoveGame,
   }) {
     return onFetchLiveGame?.call();
   }
@@ -262,8 +262,8 @@ class _$OnFetchLiveGameImpl implements _OnFetchLiveGame {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
-    TResult Function(Game game)? onSaveGame,
-    TResult Function(Game game)? onRemoveGame,
+    TResult Function(GameEntity game)? onSaveGame,
+    TResult Function(GameEntity game)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (onFetchLiveGame != null) {
@@ -320,9 +320,7 @@ abstract class _$$OnSaveGameImplCopyWith<$Res> {
           _$OnSaveGameImpl value, $Res Function(_$OnSaveGameImpl) then) =
       __$$OnSaveGameImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Game game});
-
-  $GameCopyWith<$Res> get game;
+  $Res call({GameEntity game});
 }
 
 /// @nodoc
@@ -342,16 +340,8 @@ class __$$OnSaveGameImplCopyWithImpl<$Res>
       null == game
           ? _value.game
           : game // ignore: cast_nullable_to_non_nullable
-              as Game,
+              as GameEntity,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $GameCopyWith<$Res> get game {
-    return $GameCopyWith<$Res>(_value.game, (value) {
-      return _then(_value.copyWith(game: value));
-    });
   }
 }
 
@@ -361,7 +351,7 @@ class _$OnSaveGameImpl implements _OnSaveGame {
   const _$OnSaveGameImpl(this.game);
 
   @override
-  final Game game;
+  final GameEntity game;
 
   @override
   String toString() {
@@ -390,8 +380,8 @@ class _$OnSaveGameImpl implements _OnSaveGame {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
-    required TResult Function(Game game) onSaveGame,
-    required TResult Function(Game game) onRemoveGame,
+    required TResult Function(GameEntity game) onSaveGame,
+    required TResult Function(GameEntity game) onRemoveGame,
   }) {
     return onSaveGame(game);
   }
@@ -401,8 +391,8 @@ class _$OnSaveGameImpl implements _OnSaveGame {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
-    TResult? Function(Game game)? onSaveGame,
-    TResult? Function(Game game)? onRemoveGame,
+    TResult? Function(GameEntity game)? onSaveGame,
+    TResult? Function(GameEntity game)? onRemoveGame,
   }) {
     return onSaveGame?.call(game);
   }
@@ -412,8 +402,8 @@ class _$OnSaveGameImpl implements _OnSaveGame {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
-    TResult Function(Game game)? onSaveGame,
-    TResult Function(Game game)? onRemoveGame,
+    TResult Function(GameEntity game)? onSaveGame,
+    TResult Function(GameEntity game)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (onSaveGame != null) {
@@ -461,9 +451,9 @@ class _$OnSaveGameImpl implements _OnSaveGame {
 }
 
 abstract class _OnSaveGame implements LiveGameEvent {
-  const factory _OnSaveGame(final Game game) = _$OnSaveGameImpl;
+  const factory _OnSaveGame(final GameEntity game) = _$OnSaveGameImpl;
 
-  Game get game;
+  GameEntity get game;
   @JsonKey(ignore: true)
   _$$OnSaveGameImplCopyWith<_$OnSaveGameImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -475,9 +465,7 @@ abstract class _$$OnRemoveGameImplCopyWith<$Res> {
           _$OnRemoveGameImpl value, $Res Function(_$OnRemoveGameImpl) then) =
       __$$OnRemoveGameImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Game game});
-
-  $GameCopyWith<$Res> get game;
+  $Res call({GameEntity game});
 }
 
 /// @nodoc
@@ -497,16 +485,8 @@ class __$$OnRemoveGameImplCopyWithImpl<$Res>
       null == game
           ? _value.game
           : game // ignore: cast_nullable_to_non_nullable
-              as Game,
+              as GameEntity,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $GameCopyWith<$Res> get game {
-    return $GameCopyWith<$Res>(_value.game, (value) {
-      return _then(_value.copyWith(game: value));
-    });
   }
 }
 
@@ -516,7 +496,7 @@ class _$OnRemoveGameImpl implements _OnRemoveGame {
   const _$OnRemoveGameImpl(this.game);
 
   @override
-  final Game game;
+  final GameEntity game;
 
   @override
   String toString() {
@@ -545,8 +525,8 @@ class _$OnRemoveGameImpl implements _OnRemoveGame {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() onFetchLiveGame,
-    required TResult Function(Game game) onSaveGame,
-    required TResult Function(Game game) onRemoveGame,
+    required TResult Function(GameEntity game) onSaveGame,
+    required TResult Function(GameEntity game) onRemoveGame,
   }) {
     return onRemoveGame(game);
   }
@@ -556,8 +536,8 @@ class _$OnRemoveGameImpl implements _OnRemoveGame {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? onFetchLiveGame,
-    TResult? Function(Game game)? onSaveGame,
-    TResult? Function(Game game)? onRemoveGame,
+    TResult? Function(GameEntity game)? onSaveGame,
+    TResult? Function(GameEntity game)? onRemoveGame,
   }) {
     return onRemoveGame?.call(game);
   }
@@ -567,8 +547,8 @@ class _$OnRemoveGameImpl implements _OnRemoveGame {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? onFetchLiveGame,
-    TResult Function(Game game)? onSaveGame,
-    TResult Function(Game game)? onRemoveGame,
+    TResult Function(GameEntity game)? onSaveGame,
+    TResult Function(GameEntity game)? onRemoveGame,
     required TResult orElse(),
   }) {
     if (onRemoveGame != null) {
@@ -616,9 +596,9 @@ class _$OnRemoveGameImpl implements _OnRemoveGame {
 }
 
 abstract class _OnRemoveGame implements LiveGameEvent {
-  const factory _OnRemoveGame(final Game game) = _$OnRemoveGameImpl;
+  const factory _OnRemoveGame(final GameEntity game) = _$OnRemoveGameImpl;
 
-  Game get game;
+  GameEntity get game;
   @JsonKey(ignore: true)
   _$$OnRemoveGameImplCopyWith<_$OnRemoveGameImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -631,7 +611,7 @@ mixin _$LiveGameState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<Game> games) loaded,
+    required TResult Function(List<GameEntity> games) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -639,7 +619,7 @@ mixin _$LiveGameState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<Game> games)? loaded,
+    TResult? Function(List<GameEntity> games)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -647,7 +627,7 @@ mixin _$LiveGameState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<Game> games)? loaded,
+    TResult Function(List<GameEntity> games)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -737,7 +717,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<Game> games) loaded,
+    required TResult Function(List<GameEntity> games) loaded,
   }) {
     return initial();
   }
@@ -748,7 +728,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<Game> games)? loaded,
+    TResult? Function(List<GameEntity> games)? loaded,
   }) {
     return initial?.call();
   }
@@ -759,7 +739,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<Game> games)? loaded,
+    TResult Function(List<GameEntity> games)? loaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -851,7 +831,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<Game> games) loaded,
+    required TResult Function(List<GameEntity> games) loaded,
   }) {
     return loading();
   }
@@ -862,7 +842,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<Game> games)? loaded,
+    TResult? Function(List<GameEntity> games)? loaded,
   }) {
     return loading?.call();
   }
@@ -873,7 +853,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<Game> games)? loaded,
+    TResult Function(List<GameEntity> games)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -991,7 +971,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<Game> games) loaded,
+    required TResult Function(List<GameEntity> games) loaded,
   }) {
     return failure(message);
   }
@@ -1002,7 +982,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<Game> games)? loaded,
+    TResult? Function(List<GameEntity> games)? loaded,
   }) {
     return failure?.call(message);
   }
@@ -1013,7 +993,7 @@ class _$FailureImpl implements _Failure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<Game> games)? loaded,
+    TResult Function(List<GameEntity> games)? loaded,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1075,7 +1055,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Game> games});
+  $Res call({List<GameEntity> games});
 }
 
 /// @nodoc
@@ -1095,7 +1075,7 @@ class __$$LoadedImplCopyWithImpl<$Res>
       null == games
           ? _value._games
           : games // ignore: cast_nullable_to_non_nullable
-              as List<Game>,
+              as List<GameEntity>,
     ));
   }
 }
@@ -1103,11 +1083,11 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(final List<Game> games) : _games = games;
+  const _$LoadedImpl(final List<GameEntity> games) : _games = games;
 
-  final List<Game> _games;
+  final List<GameEntity> _games;
   @override
-  List<Game> get games {
+  List<GameEntity> get games {
     if (_games is EqualUnmodifiableListView) return _games;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_games);
@@ -1142,7 +1122,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) failure,
-    required TResult Function(List<Game> games) loaded,
+    required TResult Function(List<GameEntity> games) loaded,
   }) {
     return loaded(games);
   }
@@ -1153,7 +1133,7 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? failure,
-    TResult? Function(List<Game> games)? loaded,
+    TResult? Function(List<GameEntity> games)? loaded,
   }) {
     return loaded?.call(games);
   }
@@ -1164,7 +1144,7 @@ class _$LoadedImpl implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? failure,
-    TResult Function(List<Game> games)? loaded,
+    TResult Function(List<GameEntity> games)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -1212,9 +1192,9 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements LiveGameState {
-  const factory _Loaded(final List<Game> games) = _$LoadedImpl;
+  const factory _Loaded(final List<GameEntity> games) = _$LoadedImpl;
 
-  List<Game> get games;
+  List<GameEntity> get games;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;

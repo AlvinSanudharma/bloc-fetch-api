@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_fetch_api/models/game.dart';
-import 'package:bloc_fetch_api/source/game_source.dart';
+import 'package:bloc_fetch_api/games/data/models/game.dart';
+import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
+import 'package:bloc_fetch_api/games/domain/usecase/fetch_game_usecase.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'live_game_event.dart';
@@ -8,19 +9,21 @@ part 'live_game_state.dart';
 part 'live_game_bloc.freezed.dart';
 
 class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
-  LiveGameBloc() : super(const _Initial()) {
+  final FetchGameUsecase fetchGameUsecase;
+
+  LiveGameBloc({required this.fetchGameUsecase}) : super(const _Initial()) {
     on<LiveGameEvent>((event, emit) async {
       await event.when(
         started: () {
           emit(const LiveGameState.initial());
         },
         onSaveGame: (game) {
-          final List<Game> games = List.from(state.maybeWhen(
+          final List<GameEntity> games = List.from(state.maybeWhen(
             orElse: () => [],
             loaded: (games) => games,
           ));
 
-          Game newGame = game.copyWith(isSaved: true);
+          GameEntity newGame = game.copyWith(isSaved: true);
 
           int index = games.indexWhere(
             (e) => e.id == newGame.id,
@@ -31,12 +34,12 @@ class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
           emit(LiveGameState.loaded(games));
         },
         onRemoveGame: (game) {
-          final List<Game> games = List.from(state.maybeWhen(
+          final List<GameEntity> games = List.from(state.maybeWhen(
             orElse: () => [],
             loaded: (games) => games,
           ));
 
-          Game newGame = game.copyWith(isSaved: false);
+          GameEntity newGame = game.copyWith(isSaved: false);
 
           int index = games.indexWhere(
             (e) => e.id == newGame.id,
@@ -49,13 +52,16 @@ class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
         onFetchLiveGame: () async {
           emit(const LiveGameState.loading());
 
-          List<Game>? result = await GameSource.getGames();
+          final result = await fetchGameUsecase();
 
-          if (result == null) {
-            emit(const LiveGameState.failure('Something went wrong'));
-          } else {
-            emit(LiveGameState.loaded(result));
-          }
+          result.fold(
+            (error) {
+              emit(LiveGameState.failure(error.message ?? ''));
+            },
+            (data) {
+              emit(LiveGameState.loaded(data));
+            },
+          );
         },
       );
     });
