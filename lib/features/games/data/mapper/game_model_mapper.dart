@@ -1,5 +1,5 @@
-import 'package:bloc_fetch_api/games/data/models/game.dart';
-import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
+import 'package:bloc_fetch_api/features/games/data/models/game.dart';
+import 'package:bloc_fetch_api/features/games/domain/entity/game_entity.dart';
 
 class GameModelMapper {
   static List<GameEntity> toDomain(List<Game> model) {

@@ -1,9 +1,9 @@
 import 'package:bloc_fetch_api/core/error_handler.dart';
 import 'package:bloc_fetch_api/core/failure.dart';
-import 'package:bloc_fetch_api/games/data/datasource/game_remote_datasource.dart';
-import 'package:bloc_fetch_api/games/data/mapper/game_model_mapper.dart';
-import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
-import 'package:bloc_fetch_api/games/domain/repository/game_repository.dart';
+import 'package:bloc_fetch_api/features/games/data/datasource/game_remote_datasource.dart';
+import 'package:bloc_fetch_api/features/games/data/mapper/game_model_mapper.dart';
+import 'package:bloc_fetch_api/features/games/domain/entity/game_entity.dart';
+import 'package:bloc_fetch_api/features/games/domain/repository/game_repository.dart';
 import 'package:dartz/dartz.dart';
 
 class GameRepositoryImpl implements GameRepository {

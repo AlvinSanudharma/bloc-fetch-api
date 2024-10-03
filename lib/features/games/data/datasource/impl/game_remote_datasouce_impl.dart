@@ -1,5 +1,5 @@
-import 'package:bloc_fetch_api/games/data/datasource/game_remote_datasource.dart';
-import 'package:bloc_fetch_api/games/data/models/game.dart';
+import 'package:bloc_fetch_api/features/games/data/datasource/game_remote_datasource.dart';
+import 'package:bloc_fetch_api/features/games/data/models/game.dart';
 import 'package:d_method/d_method.dart';
 import 'package:dio/dio.dart';
 

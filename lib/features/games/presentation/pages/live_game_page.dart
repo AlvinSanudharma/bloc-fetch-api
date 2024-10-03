@@ -1,7 +1,7 @@
-import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
-import 'package:bloc_fetch_api/games/presentation/bloc/live_game_bloc.dart';
-import 'package:bloc_fetch_api/games/presentation/cubit/genre_cubit.dart';
-import 'package:bloc_fetch_api/games/presentation/widgets/item_game.dart';
+import 'package:bloc_fetch_api/features/games/domain/entity/game_entity.dart';
+import 'package:bloc_fetch_api/features/games/presentation/bloc/live_game_bloc.dart';
+import 'package:bloc_fetch_api/features/games/presentation/cubit/genre_cubit.dart';
+import 'package:bloc_fetch_api/features/games/presentation/widgets/item_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

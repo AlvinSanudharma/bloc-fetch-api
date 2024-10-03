@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
-import 'package:bloc_fetch_api/games/domain/usecase/fetch_game_usecase.dart';
+import 'package:bloc_fetch_api/features/games/domain/entity/game_entity.dart';
+import 'package:bloc_fetch_api/features/games/domain/usecase/fetch_game_usecase.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'live_game_event.dart';

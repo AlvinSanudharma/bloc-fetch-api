@@ -1,4 +1,4 @@
-import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
+import 'package:bloc_fetch_api/features/games/domain/entity/game_entity.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
