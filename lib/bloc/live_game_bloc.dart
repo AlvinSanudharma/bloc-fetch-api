@@ -15,10 +15,8 @@ class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
           emit(const LiveGameState.initial());
         },
         onSaveGame: (game) {
-          final List<Game> games = List.from(state.when(
-            initial: () => [],
-            loading: () => [],
-            failure: (message) => [],
+          final List<Game> games = List.from(state.maybeWhen(
+            orElse: () => [],
             loaded: (games) => games,
           ));
 
@@ -33,10 +31,8 @@ class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
           emit(LiveGameState.loaded(games));
         },
         onRemoveGame: (game) {
-          final List<Game> games = List.from(state.when(
-            initial: () => [],
-            loading: () => [],
-            failure: (message) => [],
+          final List<Game> games = List.from(state.maybeWhen(
+            orElse: () => [],
             loaded: (games) => games,
           ));
 
