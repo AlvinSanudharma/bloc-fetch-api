@@ -21,7 +21,7 @@ class GameRemoteDatasouceImpl implements GameRemoteDatasource {
           .toList();
 
       return games;
-    } on DioException catch (e) {
+    } catch (e) {
       DMethod.printTitle('error response', e.toString());
 
       rethrow;

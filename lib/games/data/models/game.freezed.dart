@@ -42,8 +42,6 @@ mixin _$Game {
   DateTime? get releaseDate => throw _privateConstructorUsedError;
   @JsonKey(name: "freetogame_profile_url")
   String? get freetogameProfileUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: "isSaved", defaultValue: false)
-  bool? get isSaved => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,8 +64,7 @@ abstract class $GameCopyWith<$Res> {
       @JsonKey(name: "publisher") String? publisher,
       @JsonKey(name: "developer") String? developer,
       @JsonKey(name: "release_date") DateTime? releaseDate,
-      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl,
-      @JsonKey(name: "isSaved", defaultValue: false) bool? isSaved});
+      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl});
 }
 
 /// @nodoc
@@ -94,7 +91,6 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
     Object? developer = freezed,
     Object? releaseDate = freezed,
     Object? freetogameProfileUrl = freezed,
-    Object? isSaved = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -141,10 +137,6 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSaved: freezed == isSaved
-          ? _value.isSaved
-          : isSaved // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ) as $Val);
   }
 }
@@ -167,8 +159,7 @@ abstract class _$$GameImplCopyWith<$Res> implements $GameCopyWith<$Res> {
       @JsonKey(name: "publisher") String? publisher,
       @JsonKey(name: "developer") String? developer,
       @JsonKey(name: "release_date") DateTime? releaseDate,
-      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl,
-      @JsonKey(name: "isSaved", defaultValue: false) bool? isSaved});
+      @JsonKey(name: "freetogame_profile_url") String? freetogameProfileUrl});
 }
 
 /// @nodoc
@@ -192,7 +183,6 @@ class __$$GameImplCopyWithImpl<$Res>
     Object? developer = freezed,
     Object? releaseDate = freezed,
     Object? freetogameProfileUrl = freezed,
-    Object? isSaved = freezed,
   }) {
     return _then(_$GameImpl(
       id: freezed == id
@@ -239,10 +229,6 @@ class __$$GameImplCopyWithImpl<$Res>
           ? _value.freetogameProfileUrl
           : freetogameProfileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSaved: freezed == isSaved
-          ? _value.isSaved
-          : isSaved // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -262,8 +248,7 @@ class _$GameImpl implements _Game {
       @JsonKey(name: "publisher") this.publisher,
       @JsonKey(name: "developer") this.developer,
       @JsonKey(name: "release_date") this.releaseDate,
-      @JsonKey(name: "freetogame_profile_url") this.freetogameProfileUrl,
-      @JsonKey(name: "isSaved", defaultValue: false) this.isSaved});
+      @JsonKey(name: "freetogame_profile_url") this.freetogameProfileUrl});
 
   factory _$GameImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameImplFromJson(json);
@@ -301,13 +286,10 @@ class _$GameImpl implements _Game {
   @override
   @JsonKey(name: "freetogame_profile_url")
   final String? freetogameProfileUrl;
-  @override
-  @JsonKey(name: "isSaved", defaultValue: false)
-  final bool? isSaved;
 
   @override
   String toString() {
-    return 'Game(id: $id, title: $title, thumbnail: $thumbnail, shortDescription: $shortDescription, gameUrl: $gameUrl, genre: $genre, platform: $platform, publisher: $publisher, developer: $developer, releaseDate: $releaseDate, freetogameProfileUrl: $freetogameProfileUrl, isSaved: $isSaved)';
+    return 'Game(id: $id, title: $title, thumbnail: $thumbnail, shortDescription: $shortDescription, gameUrl: $gameUrl, genre: $genre, platform: $platform, publisher: $publisher, developer: $developer, releaseDate: $releaseDate, freetogameProfileUrl: $freetogameProfileUrl)';
   }
 
   @override
@@ -332,8 +314,7 @@ class _$GameImpl implements _Game {
             (identical(other.releaseDate, releaseDate) ||
                 other.releaseDate == releaseDate) &&
             (identical(other.freetogameProfileUrl, freetogameProfileUrl) ||
-                other.freetogameProfileUrl == freetogameProfileUrl) &&
-            (identical(other.isSaved, isSaved) || other.isSaved == isSaved));
+                other.freetogameProfileUrl == freetogameProfileUrl));
   }
 
   @JsonKey(ignore: true)
@@ -350,8 +331,7 @@ class _$GameImpl implements _Game {
       publisher,
       developer,
       releaseDate,
-      freetogameProfileUrl,
-      isSaved);
+      freetogameProfileUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -369,20 +349,18 @@ class _$GameImpl implements _Game {
 
 abstract class _Game implements Game {
   const factory _Game(
-          {@JsonKey(name: "id") final int? id,
-          @JsonKey(name: "title") final String? title,
-          @JsonKey(name: "thumbnail") final String? thumbnail,
-          @JsonKey(name: "short_description") final String? shortDescription,
-          @JsonKey(name: "game_url") final String? gameUrl,
-          @JsonKey(name: "genre") final String? genre,
-          @JsonKey(name: "platform") final String? platform,
-          @JsonKey(name: "publisher") final String? publisher,
-          @JsonKey(name: "developer") final String? developer,
-          @JsonKey(name: "release_date") final DateTime? releaseDate,
-          @JsonKey(name: "freetogame_profile_url")
-          final String? freetogameProfileUrl,
-          @JsonKey(name: "isSaved", defaultValue: false) final bool? isSaved}) =
-      _$GameImpl;
+      {@JsonKey(name: "id") final int? id,
+      @JsonKey(name: "title") final String? title,
+      @JsonKey(name: "thumbnail") final String? thumbnail,
+      @JsonKey(name: "short_description") final String? shortDescription,
+      @JsonKey(name: "game_url") final String? gameUrl,
+      @JsonKey(name: "genre") final String? genre,
+      @JsonKey(name: "platform") final String? platform,
+      @JsonKey(name: "publisher") final String? publisher,
+      @JsonKey(name: "developer") final String? developer,
+      @JsonKey(name: "release_date") final DateTime? releaseDate,
+      @JsonKey(name: "freetogame_profile_url")
+      final String? freetogameProfileUrl}) = _$GameImpl;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$GameImpl.fromJson;
 
@@ -419,9 +397,6 @@ abstract class _Game implements Game {
   @override
   @JsonKey(name: "freetogame_profile_url")
   String? get freetogameProfileUrl;
-  @override
-  @JsonKey(name: "isSaved", defaultValue: false)
-  bool? get isSaved;
   @override
   @JsonKey(ignore: true)
   _$$GameImplCopyWith<_$GameImpl> get copyWith =>

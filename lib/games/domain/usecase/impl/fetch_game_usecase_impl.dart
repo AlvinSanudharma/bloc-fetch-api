@@ -1,3 +1,4 @@
+import 'package:bloc_fetch_api/core/failure.dart';
 import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
 import 'package:bloc_fetch_api/games/domain/repository/game_repository.dart';
 import 'package:bloc_fetch_api/games/domain/usecase/fetch_game_usecase.dart';
@@ -10,7 +11,7 @@ class FetchGameUsecaseImpl implements FetchGameUsecase {
   FetchGameUsecaseImpl({required this.gameRepository});
 
   @override
-  Future<Either<DioException, List<GameEntity>>> call() async {
+  Future<Either<Failure, List<GameEntity>>> call() async {
     final response = await gameRepository.fetchGames();
 
     return response;

@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_fetch_api/games/data/models/game.dart';
 import 'package:bloc_fetch_api/games/domain/entity/game_entity.dart';
 import 'package:bloc_fetch_api/games/domain/usecase/fetch_game_usecase.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -56,7 +55,7 @@ class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
 
           result.fold(
             (error) {
-              emit(LiveGameState.failure(error.message ?? ''));
+              emit(LiveGameState.failure(error.message));
             },
             (data) {
               emit(LiveGameState.loaded(data));
