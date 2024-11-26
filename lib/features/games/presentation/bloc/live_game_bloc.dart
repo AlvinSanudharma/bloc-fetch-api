@@ -53,7 +53,7 @@ class LiveGameBloc extends Bloc<LiveGameEvent, LiveGameState> {
 
           final result = await fetchGameUsecase();
 
-          result.fold(
+          result.match(
             (error) {
               emit(LiveGameState.failure(error.message));
             },

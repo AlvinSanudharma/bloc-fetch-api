@@ -18,24 +18,21 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
+    return MaterialApp(
+      theme: ThemeData(
+        textTheme: Theme.of(context).textTheme.apply(
+              fontSizeFactor: 1.0,
+              fontSizeDelta: 2.0,
+            ),
+      ),
+      home: MultiBlocProvider(providers: [
         BlocProvider(
           create: (context) => getIt<LiveGameBloc>(),
         ),
         BlocProvider(
           create: (context) => getIt<GenreCubit>(),
         )
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          textTheme: Theme.of(context).textTheme.apply(
-                fontSizeFactor: 1.0,
-                fontSizeDelta: 2.0,
-              ),
-        ),
-        home: LiveGamePage(),
-      ),
+      ], child: const LiveGamePage()),
     );
   }
 }
